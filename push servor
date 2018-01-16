@@ -1,0 +1,28 @@
+#include <Servo.h>
+Servo a;
+Servo b;
+Servo c;
+int pos =90;
+
+void setup() {
+  a.attach(6);
+  b.attach(7);
+  c.attach(8);
+  pinMode(2,INPUT);
+  pinMode(3,INPUT);
+  a.write(0);
+  delay(500);
+}
+void loop() {
+  if(digitalRead(2) == LOW) {
+    a.write(180);
+    b.write(180);
+    c.write(180);
+    }
+    if(digitalRead(3) == HIGH) {
+      a.write(0);
+      b.write(0);
+      c.write(0);
+      }
+    delay(15);
+}
